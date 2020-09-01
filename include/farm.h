@@ -6,14 +6,13 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 12:53:29 by ciglesia          #+#    #+#             */
-/*   Updated: 2020/09/01 02:41:33 by ciglesia         ###   ########.fr       */
+/*   Updated: 2020/09/01 13:01:55 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FARM_H
 # define FARM_H
 
-# include "libft.h"
 # include "graph.h"
 
 typedef struct		s_farm

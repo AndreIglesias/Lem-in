@@ -6,7 +6,7 @@
 #    By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/08 22:49:10 by ciglesia          #+#    #+#              #
-#    Updated: 2020/09/01 02:44:19 by ciglesia         ###   ########.fr        #
+#    Updated: 2020/09/01 13:14:57 by ciglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -25,9 +25,9 @@ DIRGRAPH	=	./src/graph/
 DIRSOLVE	=	./src/solve/
 
 SRC			=	lem_in.c
-FARM		=	treatment.c valid_input.c
-GRAPH		=	treatment.c attrib.c list.c print.c
-SOLVE		=	solve.c valid_input.c bfs.c bfs_treatment.c flow.c flow_treatment.c path_computation.c
+FARM		=	farm_treatment.c valid_input.c
+GRAPH		=	graph_treatment.c attrib.c list.c print.c
+SOLVE		=	solve.c valid_solution.c bfs.c bfs_treatment.c flow.c flow_treatment.c path_computation.c
 
 OAUX		=	$(SRC:%=$(DIROBJ)%) $(FARM:%=$(DIROBJ)%) $(GRAPH:%=$(DIROBJ)%) $(SOLVE:%=$(DIROBJ)%)
 DEPS		=	$(OAUX:.c=.d)
@@ -51,23 +51,23 @@ RM			=	/bin/rm -f
 				$(CC) $(CFLAGS) $(INCLUDE) -MMD -o $@ -c $<
 
 $(NAME)	: 		submake $(OBJS)
-				-@(cd $(SUB_MAKE) && $(MAKE))
-				-@$(CC) $(INCLUDE) $(CFLAGS) -o $(NAME) $(OBJS) $(INC_LIB)
+				@$(CC) $(INCLUDE) $(CFLAGS) -o $(NAME) $(OBJS) $(INC_LIB)
 
 clean	:
-				-@$(RM) $(OBJS)
-				-@(cd $(SUB_MAKE) && $(MAKE) clean)
+				@$(RM) $(OBJS)
+				@$(RM) $(DEPS)
+				@(cd $(SUB_MAKE) && $(MAKE) clean)
 
 all		:		$(NAME)
 
 fclean	:		clean
-				-@$(RM) $(NAME)
-				-@(cd $(SUB_MAKE) && $(MAKE) fclean)
+				@$(RM) $(NAME)
+				@(cd $(SUB_MAKE) && $(MAKE) fclean)
 
 re		:		fclean $(NAME)
-				-@(cd $(SUB_MAKE) && $(MAKE) re)
+				@(cd $(SUB_MAKE) && $(MAKE) re)
 
 submake	:
-				-@(cd $(SUB_MAKE) && $(MAKE))
+				@(cd $(SUB_MAKE) && $(MAKE))
 
 .PHONY	: all clean fclean re
