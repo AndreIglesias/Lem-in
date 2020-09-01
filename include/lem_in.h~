@@ -1,0 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lem_in.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/09 00:04:51 by ciglesia          #+#    #+#             */
+/*   Updated: 2020/08/17 12:52:27 by ciglesia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef LEM_IN_H
+# define LEM_IN_H
+
+# include "libft.h"
+# include "graph/graph.h"
+# include "farm/farm.h"
+# include "solve/solve.h"
+
+#endif
