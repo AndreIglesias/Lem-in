@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 20:26:23 by ciglesia          #+#    #+#             */
-/*   Updated: 2020/08/19 00:50:44 by ciglesia         ###   ########.fr       */
+/*   Updated: 2020/09/21 18:16:19 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ int		main(int ac, char **av)
 	int		debug;
 	int		ants;
 
-	(void)av;
 	if (ac == 1 || (ac == 2 && ft_scmp(av[1], "--d", "--dp")))
 	{
 		debug = (ac == 2) ? 1 : 0;
@@ -83,6 +82,11 @@ int		main(int ac, char **av)
 			debug = 2;
 		init_farm(&farm);
 		fill_farm(&farm, 0, -1);
+		if (!farm->rms)
+		{
+			free(farm);
+			return (ft_puterr("ERROR:There are no rooms", 1));
+		}
 		ants = farm->ants;
 		ft_putendl("");
 		solve(&farm, debug);
