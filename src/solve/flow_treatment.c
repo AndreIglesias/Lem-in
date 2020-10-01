@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 13:16:30 by ciglesia          #+#    #+#             */
-/*   Updated: 2020/09/01 13:13:27 by ciglesia         ###   ########.fr       */
+/*   Updated: 2020/09/22 18:55:06 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int		path_lenght(t_room *path)
 {
 	int i;
 
+	if (path->end == 1)
+		return (1);
 	i = 0;
 	while (path && path->end != 1)
 	{

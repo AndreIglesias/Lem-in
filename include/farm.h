@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 12:53:29 by ciglesia          #+#    #+#             */
-/*   Updated: 2020/09/01 13:01:55 by ciglesia         ###   ########.fr       */
+/*   Updated: 2020/09/21 18:04:40 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_coord				coord(char *x, char *y);
 /*
 ** valid_input
 */
+
 int					is_num(char *str);
 int					is_room(t_room **rms, char **rooms, int *io);
 int					is_link(t_farm **farm, char *str, int io);
